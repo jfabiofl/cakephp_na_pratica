@@ -32,4 +32,22 @@ App::uses('Model', 'Model');
  * @package       app.Model
  */
 class AppModel extends Model {
+
+	public function formatDate($data){
+		if(strlen($data) == 10){
+			$temp = explode('/',$data);
+			if(count($temp) == 3)
+				return $temp[2] . "-" . $temp[1] . "-" . $temp[0];
+			$temp = explode('-',$data);
+			return (count($temp) == 3) ? $temp[2] . "/" . $temp[1] . "/" . $temp[0] : false;
+		} else {
+			$temp = explode('/',substr($data,0,10));
+			if(count($temp) == 3)
+				return $temp[2] . "-" . $temp[1] . "-" . $temp[0] . " " . substr($data, 10);
+			$temp = explode('-',substr($data,0,10));
+			return (count($temp) == 3) ? $temp[2] . "/" . $temp[1] . "/" . $temp[0] . " " . substr($data, 10) : false;
+		}
+		
+	}
+
 }

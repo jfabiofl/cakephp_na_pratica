@@ -1,31 +1,22 @@
-<h1>Cadastro de notícias</h1>
+<h1>Listagem de notícias</h1>
 
-<?php
-echo $this->Form->create("Noticia");
-
-echo $this->Form->input(
-	"titulo", 
-	array(
-		"label" => "Título da notícia", 
-		"placeholder" => "Digite algo",
-		"required" => false
-	)
-);
-echo $this->Form->input("texto");
-echo $this->Form->input(
-	"data", 
-	array(
-		"type" => "text"
-	)
-);
-echo $this->Form->input(
-	"categoria_id",
-	array(
-		"empty" => "Selecione uma opção"
-	)
-);
-
-echo $this->Form->submit("Cadastrar");
-
-echo $this->Form->end();
-?>
+<table>
+	<tr>
+		<th>Título</th>
+		<th>Data</th>
+		<th>Ações</th>
+	</tr>
+	<?php
+	foreach ($dados as $key => $value) {
+		?>
+		<tr>
+			<td><?php echo $value["Noticia"]["titulo"]; ?></td>
+			<td><?php echo $value["Noticia"]["data"]; ?></td>
+			<td>
+				<?php echo $this->Html->link("Editar", array("action" => "editar", $value["Noticia"]["id"])); ?>
+			</td>
+		</tr>
+		<?php
+	}
+	?>
+</table>

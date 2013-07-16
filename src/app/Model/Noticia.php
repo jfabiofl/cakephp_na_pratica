@@ -2,6 +2,8 @@
 
 class Noticia extends AppModel{
 
+	//public $belongsTo = array("Categoria");
+
 	public $validate = array(
 		"titulo" => array(
 			"campoVazio" => array(
@@ -19,21 +21,22 @@ class Noticia extends AppModel{
 		}
 	}
 
-	public $belongsTo = array(
-		"Categoria" => array(
-			"order" => "nome ASC"
-		)
-	);
-
 	public function beforeValidate(){
-		echo "Validação";
-		debug($this->data);
 	}
 
 	public function beforeSave(){
-		echo "Salvar";
-		debug($this->data);
-		die();
+		if(!empty($this->data["Noticia"]["data"])){
+			$this->data["Noticia"]["data"] = $this->formatDate($this->data["Noticia"]["data"]);
+		}
 	}
 	
+	public function afterFind($dados){
+		foreach ($dados as $key => $value) {
+			if(!empty($value["Noticia"]["data"])){
+				$dados[$key]["Noticia"]["data"] = $this->formatDate($value["Noticia"]["data"]);
+			}
+		}
+		return $dados;
+	}
+
 }

@@ -1,2 +1,2 @@
-1373724238
-a:2:{s:4:"name";a:6:{s:32:"2de902ef907771182722dde39b1ce46b";s:9:"`hangout`";s:32:"1772d2e5eb164b197053fbbab9c25700";s:16:"`Categoria`.`id`";s:32:"c9778a5d2e2c44d88eaff4e2063946e4";s:18:"`Categoria`.`nome`";s:32:"62e81aa50654e9c18daed58c89601538";s:12:"`categorias`";s:32:"53918af68b4bb291c469330d4242ce29";s:11:"`Categoria`";s:32:"b1fa3ab9248e3e878211b178106796d4";s:10:"`noticias`";}s:6:"fields";a:1:{s:32:"e99764e1028f196d664e34d1064be000";a:2:{i:0;s:16:"`Categoria`.`id`";i:1;s:18:"`Categoria`.`nome`";}}}
+1373939662
+a:2:{s:4:"name";a:5:{s:32:"2de902ef907771182722dde39b1ce46b";s:9:"`hangout`";s:32:"b1fa3ab9248e3e878211b178106796d4";s:10:"`noticias`";s:32:"47eb7bb09414c64f779510914712b6ee";s:7:"`count`";s:32:"0fa0ad56e5f8bafc839711d23c59b529";s:14:"`Noticia`.`id`";s:32:"7a1d0fd48a3076297e9435ac4808abe6";s:9:"`Noticia`";}s:6:"fields";a:1:{s:32:"e2e4e8b02c673859a3189f7abb05e196";a:1:{i:0;s:19:"COUNT(*) AS `count`";}}}
